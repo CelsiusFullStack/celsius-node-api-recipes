@@ -1,9 +1,13 @@
 //? Dependencies
 const express = require('express');
+//const swaggerUi = require('swagger-ui-express')
+
 const cors = require('cors')
 const db = require('./utils/database')
 
 //? Files
+//const swaggerDoc = require('../swagger.json')
+
 const {port} = require('./config');
 //* Routes
 const userRouter = require('./users/users.router')

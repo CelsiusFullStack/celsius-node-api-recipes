@@ -117,7 +117,6 @@ const getMyRecipes = async(userId) => {
         }
     })
     const filteredIngredients = userIngredients.map(obj => obj.ingredientId)
-
     const recipeIngredients = await RecipeIngredients.findAll({
         where: {
             ingredientId: {
@@ -125,9 +124,7 @@ const getMyRecipes = async(userId) => {
             }
         }
     })
-
     const filteredRecipes = recipeIngredients.map(obj => obj.recipeId)
-
     const data = await Recipes.findAll({
         where: {
             id: {
@@ -135,7 +132,6 @@ const getMyRecipes = async(userId) => {
             }
         }
     })
-
     return data
 }
 

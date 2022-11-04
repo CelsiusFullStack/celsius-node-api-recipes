@@ -1,6 +1,5 @@
 const { Sequelize } = require('sequelize')
 const config = require('../config')
-
 const db = new Sequelize({
     dialect: 'postgres',
     host: config.db.host, //? Variable de entorno del host

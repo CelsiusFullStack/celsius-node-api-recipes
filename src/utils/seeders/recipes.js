@@ -1,5 +1,4 @@
 const Recipes = require('../../models/recipes.models')
-
 Recipes.bulkCreate([
     {
         id: '1857e885-78ac-48b4-86ab-693b7d85f5bc',

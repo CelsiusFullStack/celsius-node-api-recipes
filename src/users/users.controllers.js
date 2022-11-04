@@ -1,6 +1,5 @@
 //? Dependencies
 const uuid = require('uuid')
-
 const Users = require('../models/users.models')
 const { hashPassword } = require('../utils/crypto')
 
@@ -12,7 +11,6 @@ const getAllUsers = async () => {
     })
     return data
 }
-
 const getUserById = async (id) => {
     const data = await Users.findOne({
         where: {
@@ -22,8 +20,6 @@ const getUserById = async (id) => {
     })
     return data
 }
-
-
 const createUser = async (data) => {
     const newUser = await Users.create({
         id: uuid.v4(),
@@ -38,7 +34,6 @@ const createUser = async (data) => {
     })
     return newUser
 }
-
 const updateUser = async (id, data) => {
     const result = await Users.update(data, {
         where: {
@@ -47,7 +42,6 @@ const updateUser = async (id, data) => {
     })
     return result
 }
-
 const deleteUser = async (id) => {
     const data = await Users.destroy({
         where: {
@@ -56,10 +50,8 @@ const deleteUser = async (id) => {
     })
     return data
 }
-
 //? Un servidor contiene la API
 //? Otro servidor contiene la Base de Datos
-
 const getUserByEmail = async(email) => {
     //? SELECT * FROM users where email = 'sahid.kick@academlo.com'//
     const data = await Users.findOne({
@@ -70,7 +62,6 @@ const getUserByEmail = async(email) => {
     })
     return data
 }
-
 module.exports = {
     createUser,
     getAllUsers,

@@ -35,7 +35,3 @@ module.exports = (passport) => {
         })
     )
 }
-
-
-
-

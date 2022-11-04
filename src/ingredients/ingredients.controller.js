@@ -1,13 +1,10 @@
 const uuid = require('uuid')
-
 const Ingredients = require('../models/ingredients.models')
 const UsersIngredients = require('../models/users_ingredients.models')
-
 const getAllIngredients = async() => {
     const data = await Ingredients.findAll()
     return data
 }
-
 const getIngredientById = async (id) => {
     const data = await Ingredients.findOne({
         where: {
@@ -16,7 +13,6 @@ const getIngredientById = async (id) => {
     })
     return data
 }
-
 const createIngredient = async (data) => {
     const response = await Ingredients.create({
         id: uuid.v4(),
@@ -26,7 +22,6 @@ const createIngredient = async (data) => {
     })
     return response
 }
-
 const updateIngredient = async (id, data) => {
     const response = await Ingredients.update(data, {
         where: {
@@ -35,7 +30,6 @@ const updateIngredient = async (id, data) => {
     })
     return response
 }
-
 const deleteIngredient = async (id) => {
     const data = await Ingredients.destroy({
         where: {
@@ -44,7 +38,6 @@ const deleteIngredient = async (id) => {
     })
     return data
 }
-
 const addIngredientToUser = async(data) => {
     const response = await UsersIngredients.create({
         id: uuid.v4(),
@@ -54,8 +47,6 @@ const addIngredientToUser = async(data) => {
     })
     return response
 }
-
-
 module.exports = {
     getAllIngredients,
     getIngredientById,

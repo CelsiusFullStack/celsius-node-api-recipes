@@ -1,5 +1,4 @@
 const typeControllers = require('./types.controller')
-
 const getAllTypes = (req, res) => {
     typeControllers.getAllTypes()
         .then(data => {
@@ -9,7 +8,6 @@ const getAllTypes = (req, res) => {
             res.status(400).json({message: err.message})
         })
 }
-
 const getTypeById = (req, res) => {
     const id = req.params.id
     typeControllers.getTypeById(id)
@@ -24,10 +22,8 @@ const getTypeById = (req, res) => {
             res.status(400).json({message: err.message})
         })
 }
-
 const postType = (req, res) => {
     const { name } = req.body
-
     if(name){
         typeControllers.createType(name)
             .then(data => {
@@ -45,7 +41,6 @@ const postType = (req, res) => {
         })
     }
 }
-
 const deleteType = (req, res) => {
     const id = req.params.id 
     typeControllers.deleteType(id)
@@ -61,12 +56,9 @@ const deleteType = (req, res) => {
         })
 
 }
-
 module.exports = {
     getAllTypes,
     getTypeById,
     postType,
     deleteType
 }
-
-

@@ -1,5 +1,4 @@
 const recipeControllers = require('./recipes.controllers')
-
 const getAllRecipes = (req, res) => {
     recipeControllers.getAllRecipes()
         .then(data => {
@@ -96,8 +95,6 @@ const getUserRecipes = (req, res) => {
             res.status(400).json({message: err.message})
         })
 }
-
-
 module.exports = {
     getAllRecipes,
     getRecipeById,

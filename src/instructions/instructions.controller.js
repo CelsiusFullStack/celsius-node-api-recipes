@@ -1,12 +1,9 @@
 const uuid = require('uuid')
-
 const Instructions = require('../models/instructions.models')
-
 const getAllInstructions = async() => {
     const data = await Instructions.findAll()
     return data
 }
-
 const getInstructionById = async (id) => {
     const data = await Instructions.findOne({
         where: {
@@ -15,7 +12,6 @@ const getInstructionById = async (id) => {
     })
     return data
 }
-
 const createInstruction = async (data) => {
     const response = await Instructions.create({
         id: uuid.v4(),
@@ -25,7 +21,6 @@ const createInstruction = async (data) => {
     })
     return response
 }
-
 const updateInstruction = async (id, data) => {
     const response = await Instructions.update(data, {
         where: {
@@ -34,7 +29,6 @@ const updateInstruction = async (id, data) => {
     })
     return response
 }
-
 const deleteInstruction = async (id) => {
     const data = await Instructions.destroy({
         where: {
@@ -43,8 +37,6 @@ const deleteInstruction = async (id) => {
     })
     return data
 }
-
-
 module.exports = {
     createInstruction,
     getAllInstructions,
